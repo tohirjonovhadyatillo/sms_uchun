@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Send, AlertCircle, CheckCircle2, Timer, XCircle } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
-import '../App.css';
+import "./styles/App.css";
+
 
 
 // Helper function to handle API requests with timeout
