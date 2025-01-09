@@ -246,7 +246,7 @@
   }
   
   .admin-button{
-    max-width:30% ;
+    max-width: 50%;
     background: #4f46e5;
     color: white;
     margin-top: 20px;
@@ -262,7 +262,7 @@
   /* promokod */
   
   .promocodeButton{
-    max-width:30% ;
+    max-width:50%% ;
     background: #4f46e5;
     color: white;
     margin-top: 20px;
@@ -278,8 +278,8 @@
   .promocod{
     display: flex;
     flex-direction: column;
-    width: 50%;
     gap: 20px;
+    margin: 0 auto;
   }
   
   
