@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AlertTriangle, ShieldAlert } from "lucide-react";
-import '../src/app.css';
 
 
 
