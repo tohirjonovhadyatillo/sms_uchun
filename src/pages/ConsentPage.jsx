@@ -5,10 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { AlertTriangle, ShieldAlert } from "lucide-react";
 
 
-
-// Importing the CSS file
-import '../app.css';  // Agar app.css 'src' papkasida bo'lsa
-
 function ConsentPage() {
   const [isAgreed, setIsAgreed] = useState(false);
   const navigate = useNavigate();
