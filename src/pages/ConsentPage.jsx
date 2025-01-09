@@ -1,8 +1,23 @@
+// pages/ConsentPage.jsx
+
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { AlertTriangle, ShieldAlert } from "lucide-react";
 
-function ConsentPage({ onAgree }) {
+// Importing the CSS file
+import '../app.css';  // Agar app.css 'src' papkasida bo'lsa
+
+function ConsentPage() {
   const [isAgreed, setIsAgreed] = useState(false);
+  const navigate = useNavigate();
+
+  const handleAgree = () => {
+    if (isAgreed) {
+      navigate("/sms-sender");
+    } else {
+      alert("Iltimos, shartlarga rozi bo'ling.");
+    }
+  };
 
   return (
     <div className="container">
@@ -11,21 +26,20 @@ function ConsentPage({ onAgree }) {
           <AlertTriangle size={40} className="text-yellow-500" />
         </div>
         <h1 className="title">Shartlarga Rozilik</h1>
-        
+
         <div className="warning-box">
           <ShieldAlert className="text-red-500" size={24} />
           <p className="warning-text">
-            Eslatib o'tamiz❗️ Bu narsa faqat do'stlaringiz uchun hazil tariqasida
-            chiqarildi va bundan yomon maqsatda ishlatilishi taqiqlanadi!
+            Eslatib o'tamiz❗️ Bu narsa faqat do'stlaringiz uchun hazil tariqasida chiqarildi va bundan yomon maqsatda ishlatilishi taqiqlanadi!
           </p>
         </div>
 
         <div className="terms-box">
           <p className="mb-4">
-            Har qanday qilingan harakatlar uchun o'zingiz javobgarsiz! 
+            Har qanday qilingan harakatlar uchun o'zingiz javobgarsiz!
             Sayt yaratuvchilari buni o'z zimmasiga olmaydi!
           </p>
-          
+
           <ul className="terms-list">
             <li>Faqat do'stona hazil uchun foydalaning</li>
             <li>Yomon niyatda ishlatish taqiqlanadi</li>
@@ -43,7 +57,7 @@ function ConsentPage({ onAgree }) {
         </label>
 
         <button
-          onClick={() => onAgree(isAgreed)}
+          onClick={handleAgree}
           disabled={!isAgreed}
           className="button consent-button"
         >
