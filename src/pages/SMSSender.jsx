@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Send, AlertCircle, CheckCircle2, Timer, XCircle } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
-import "./styles/App.css";
+import "../styles/App.css";
 
 
 
