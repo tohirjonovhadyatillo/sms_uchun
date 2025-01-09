@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Send, AlertCircle, CheckCircle2, Timer, XCircle } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
+import '../app.css';
+
 
 // Helper function to handle API requests with timeout
 const sendRequest = async (url, body, method = "POST", headers = {}) => {
@@ -229,7 +231,7 @@ function SMSSender() {
         body: { phone: `+${phone}` },
       },
 
-      
+
    
     ];
 

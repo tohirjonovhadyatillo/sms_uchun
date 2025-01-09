@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import '../app.css';
+
 
 function PromoCode() {
   const [promoCode, setPromoCode] = useState("");

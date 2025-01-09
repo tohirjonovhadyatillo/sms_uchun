@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AlertTriangle, ShieldAlert } from "lucide-react";
+import '../app.css';
+
 
 // Importing the CSS file
 import '../app.css';  // Agar app.css 'src' papkasida bo'lsa
