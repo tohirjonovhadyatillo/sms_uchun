@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AlertTriangle, ShieldAlert } from "lucide-react";
-import '../app.css';
+import '../App.css';
 
 
 function ConsentPage() {

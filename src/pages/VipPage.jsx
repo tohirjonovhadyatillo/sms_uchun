@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import "./styles/app.css";
+import "./styles/App.css";
 
 
 function VipPage() {
