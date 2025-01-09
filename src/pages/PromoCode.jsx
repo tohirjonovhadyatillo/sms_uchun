@@ -6,7 +6,7 @@ function PromoCode() {
   const [promoCode, setPromoCode] = useState("");
   const navigate = useNavigate();
 
-  const allowedPromoCodes = ["DISCOUNT10", "FREESHIP", "WELCOME2023"];
+  const allowedPromoCodes = ["DISCOUNT10", "FREESHIP"];
 
   const handleCheckPromoCode = () => {
     if (allowedPromoCodes.includes(promoCode.toUpperCase())) {
@@ -17,6 +17,7 @@ function PromoCode() {
       setPromoCode("");
     }
   };
+
 
   return (
     <div className="container">
