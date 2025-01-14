@@ -7,7 +7,7 @@ function PromoCode() {
   const [promoCode, setPromoCode] = useState("");
   const navigate = useNavigate();
 
-  const allowedPromoCodes = ["DISCOUNT10", "FREESHIP"];
+  const allowedPromoCodes = ["DISCOUNT10"];
 
   const handleCheckPromoCode = () => {
     if (allowedPromoCodes.includes(promoCode.toUpperCase())) {
@@ -34,7 +34,7 @@ function PromoCode() {
           className="button promocodeButton"
           onClick={handleCheckPromoCode}
         >
-          Tekshirish
+          Tekshirish🔁
         </button>
       </div>
     </div>

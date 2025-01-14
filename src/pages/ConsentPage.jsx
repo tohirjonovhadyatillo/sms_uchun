@@ -13,7 +13,7 @@ function ConsentPage() {
 
   const handleAgree = () => {
     if (isAgreed) {
-      navigate("/sms-sender");
+      navigate("/Buttons");
     } else {
       alert("Iltimos, shartlarga rozi bo'ling.");
     }

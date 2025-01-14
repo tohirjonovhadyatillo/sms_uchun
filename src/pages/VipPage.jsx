@@ -23,9 +23,9 @@ function VipPage() {
   return (
     <div className='container'>
       <div className="card">
-        <button className='vip-page__button button' onClick={goToPromoCode}>PromoCode</button>
-        <button className='vip-page__button button' onClick={handleClick}>Vip Tarifga O'tish</button>
-        <button className='vip-page__button button' onClick={goToVipComfort}>Vip Tarif qulayliklari</button>
+        <button className='vip-page__button button' onClick={goToPromoCode}>PromoCod🔖</button>
+        <button className='vip-page__button button' onClick={handleClick}>Vip Tarifga O'tish💎</button>
+        <button className='vip-page__button button' onClick={goToVipComfort}>Vip Tarif qulayliklari➜</button>
       </div>
     </div>
   )

@@ -14,7 +14,7 @@ function VipComfort() {
     <div className="conatiner">
       <p className="centerBlock">
          ✨Vip tarif qulayliklari: <br /> <br /><br /> Birinchidan. Oddiy tarifda Siz har safar Sms
-        yuborganingizda 50 sekunt kutishingizni so'raydi, Vip tarifda esa bu 10
+        yuborganingizda 50 sekunt kutishingizni so'raydi, Vip tarifda esa bu 15
         sekundgacha qisqaradi✅<br /><br /><br /> Ikkinchidan. Oddiy tarifda Siz 30 40 ta Sms
         yuborolasiz, Vip tarifda esa bu 3x 4x ga oshiriladi ✅ <br /><br /><br />Uchunchida. Siz
         oddiy tarifda sms yuborsangiz kopchilik oddiy tarifda bo'lgani uchun

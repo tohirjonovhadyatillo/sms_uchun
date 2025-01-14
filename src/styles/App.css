@@ -110,6 +110,7 @@
     font-size: 1rem;
     transition: all 0.2s;
     background: #f8fafc;
+    margin-left: -12px;
   }
   
   .input:focus {
@@ -282,9 +283,37 @@
     margin: 0 auto;
   }
   
+  /* Buttons */
+
+  .card-center{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 100px;
+    }
+
+    .buttonOne {
+      background: #4f46e5;
+      color: white;
+      margin-top: 20px;
+    }
+    
+    .buttonOne:hover:not(:disabled) {
+      background: #4338ca;
+    }
   
   @keyframes spin {
     to {
       transform: rotate(360deg);
     }
   }
+
+
+  
