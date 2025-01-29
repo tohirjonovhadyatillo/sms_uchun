@@ -48,7 +48,7 @@ function Buttons() {
           </button>
         </div>
       </div>
-      {isVisible && (
+      {/* {isVisible && (
         <div className="reklama" onClick={handleInstagram}>
           <p className="text">
           <img src={instagram} width={35} alt="" />
@@ -56,7 +56,7 @@ function Buttons() {
             @TOHIRJONOVVVVV
             </p>
         </div>
-      )}
+      )} */}
     </div>
   );
 }
