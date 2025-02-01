@@ -8,7 +8,7 @@ import VipComfort from "./pages/VipComfort";
 import PromoCode from "./pages/PromoCode";
 import VipSMSSender from "./pages/VipSMSSender";
 import Buttons from "./pages/Buttons";
-import VipSMSNumberSender from "./pages/VipSMSNumberSender";
+// import VipSMSNumberSender from "./pages/VipSMSNumberSender";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
       <Route path="/PromoCode" element={<PromoCode />} />
       <Route path="vipPagePro" element={<VipSMSSender />} />
       <Route path="/Buttons" element={<Buttons />}></Route>
-      <Route path="/VipSmsSenders" element={VipSMSNumberSender}></Route>
+      {/* <Route path="/VipSmsSenders" element={VipSMSNumberSender}></Route> */}
     </Routes>
   );
 }
