@@ -32,12 +32,12 @@ function PromoCode() {
           value={promoCode}
           onChange={(e) => setPromoCode(e.target.value)}
         />
-        <button
+        {/* <button
           className="button promocodeButton"
           onClick={handleCheckPromoCode}
         >
           Tekshirish🔁
-        </button>
+        </button> */}
       </div>
     </div>
   );
