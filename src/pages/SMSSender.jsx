@@ -257,7 +257,7 @@ function SMSSender() {
           )}
         </div>
 
-        <div className="pm">1 oylik tashrif buyurishlar: {visitors}  👀</div>
+       
 
         {showStats && (
           <div className="stats-container">
