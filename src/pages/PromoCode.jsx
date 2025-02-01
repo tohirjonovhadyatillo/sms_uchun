@@ -12,7 +12,7 @@ function PromoCode() {
   const handleCheckPromoCode = () => {
     if (allowedPromoCodes.includes(promoCode.toUpperCase())) {
     //   alert("Promo kod to'g'ri! Keyingi sahifaga o'tkazilmoqda.");
-      navigate("/VIPPAGEergsettbwgxddyjf");
+      navigate("/vipPagePro");
     } else {
       alert("Noto'g'ri promo kod! Qayta urinib ko'ring.");
       setPromoCode("");
