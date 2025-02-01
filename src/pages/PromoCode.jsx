@@ -1,24 +1,23 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/App.css";
-
+import pro from './promo.json';
 
 function PromoCode() {
   const [promoCode, setPromoCode] = useState("");
   const navigate = useNavigate();
 
-  const allowedPromoCodes = ["PROMO15"];
+  const allowedPromoCodes = [pro.PromoNew];
 
   const handleCheckPromoCode = () => {
     if (allowedPromoCodes.includes(promoCode.toUpperCase())) {
-    //   alert("Promo kod to'g'ri! Keyingi sahifaga o'tkazilmoqda.");
+      // Save the correct promo code to localStorage
       navigate("/vipPagePro");
     } else {
       alert("Noto'g'ri promo kod! Qayta urinib ko'ring.");
       setPromoCode("");
     }
   };
-
 
   return (
     <div className="container">
