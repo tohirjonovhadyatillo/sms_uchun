@@ -1,13 +1,17 @@
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-swc';
+
 export default defineConfig({
   plugins: [react()],
   build: {
-    minify: 'terser',
+    sourcemap: false, // Source map’larni butunlay o‘chiradi
+    minify: 'terser', // Kodni yanada minifikatsiya qiladi
     terserOptions: {
       compress: {
-        drop_console: true, // Barcha `console.log`larni olib tashlaydi
-        drop_debugger: true, // `debugger` ishlatishni bloklaydi
+        drop_console: true, // Console.log'larni olib tashlaydi
+        drop_debugger: true, // Debugger’larni olib tashlaydi
       },
-      mangle: true, // Funksiya va o‘zgaruvchi nomlarini o‘zgartirib tashlaydi
+      mangle: true, // O‘zgaruvchilar va funksiya nomlarini o‘zgartiradi
     },
   },
 });
