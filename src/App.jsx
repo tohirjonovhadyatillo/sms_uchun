@@ -18,7 +18,7 @@ function App() {
       <Route path="/Vip-page" element={<VipPage />} />
       <Route path="/Vip-Comfort" element={<VipComfort />} />
       <Route path="/PromoCode" element={<PromoCode />} />
-      <Route path="vipPagePro" element={<VipSMSSender />} />
+      <Route path="vipPageProhbkuiaykrv" element={<VipSMSSender />} />
       <Route path="/Buttons" element={<Buttons />}></Route>
       {/* <Route path="/VipSmsSenders" element={VipSMSNumberSender}></Route> */}
     </Routes>

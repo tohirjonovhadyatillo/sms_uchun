@@ -675,6 +675,23 @@ function VipSMSSender() {
     window.location.href = "https://t.me/tohirjonov_channel";
   };
 
+  const navigate = useNavigate();
+
+
+  useEffect(() => {
+    const savedPromoCode = localStorage.getItem("promoCode");
+
+    // Check if there's no promo code stored in localStorage
+    if (!savedPromoCode) {
+      // If there's no promo code, redirect to the promo code page
+      navigate("/promoCode");
+    }
+    // You can also add further validation if needed, like checking if it's the expected code
+    // if (savedPromoCode !== "EXPECTED_PROMO_CODE") {
+    //   navigate("/promoCode");
+    // }
+  }, [navigate]);
+
 
   return (
     <div className="container">
