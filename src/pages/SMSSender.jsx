@@ -134,6 +134,65 @@ function SMSSender() {
         url: "https://api.brandstore.uz/api/auth/code/create",
         body: { phone },
       },
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
+
+      {
+        url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://market.beeline.uz/api/web/auth/login",
+        body: { phone: `+${phone}` },
+      },
+      {
+        url: "https://gw.alifnasiya.uz/alifnasiya/auth/phone-verify",
+        body: { phone },
+      },
+      {
+        url: "https://api.brandstore.uz/api/auth/code/create",
+        body: { phone },
+      },
 
       {
         url: "https://api.shop.ucell.uz/api/client/v1/auth/send",
